@@ -9,10 +9,10 @@ class ProductsController < ApplicationController
     redirect_to products_path
   end
 
-  def description 
+  def description
     product = Product.find(params[:id])
-    render plain: product.description 
-  end 
+    render plain: product.description
+  end
 
 
 
