@@ -5,6 +5,21 @@
   <%= product.name %>
   <div id="item_description-<%= product.id %>"><%= truncate product.description %></div>
   <div id="inventory_count-<%= product.id %>"
-    <button class="js-more" data-id"<%= product.id %>">More info</button>
+  <button class="js-more" data-id"<%= product.id %>">More info</button>
 
   <% end %>
+</li>
+</ul>
+
+  <script type="text/javascript" charset="utf-8">
+  $(function () {
+    $(".js-more").on('click', function() {
+      //get the id from the data attribute 
+      var id = $(this).data("id");
+      $.get("/products/" + id + "/description", function(data) {
+        //Replace text of item_description-id div
+        $("#item_description-" + id).text(data);
+      })
+    })
+  })
+  </script>
