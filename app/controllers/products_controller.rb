@@ -14,12 +14,12 @@ class ProductsController < ApplicationController
     render plain: product.description
   end
 
-  def inventory 
+  def inventory
     product = Product.find(params[:id])
-    product.check_inventory 
-    render plain: product.inventory 
-  end 
-    
+    product.check_inventory
+    render plain: product.inventory
+  end
+
 
 
 
