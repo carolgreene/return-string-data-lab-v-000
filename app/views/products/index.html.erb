@@ -4,5 +4,7 @@
 <li>
   <%= product.name %>
   <div id="item_description-<%= product.id %>"><%= truncate product.description %></div>
+  <div id="inventory_count-<%= product.id %>"
+    <button class="js-more" data-id"<%= product.id %>">More info</button>
 
   <% end %>
