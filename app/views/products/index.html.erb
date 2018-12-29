@@ -20,6 +20,11 @@
         //Replace text of item_description-id div
         $("#item_description-" + id).text(data);
       })
+      var status;
+      status = data == "true" ? "Available" : "Sold Out"
+      $.get("/products/" + id + "/inventory", function(data) {
+        $("inventory_count-" + id).text(status)
+      })
     })
   })
   </script>
