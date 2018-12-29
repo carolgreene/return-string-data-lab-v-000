@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
     @products = Product.all
   end
 
-  def show 
+  def show
     @product = Product.find(product_params)
   end
 
