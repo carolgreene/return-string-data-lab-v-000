@@ -19,7 +19,7 @@
       $.get("/products/" + id + "/inventory", function(data) {
         var status;
         status = data == "true" ? "Available" : "Sold Out"
-        $("inventory_count-" + id).text(status)
+        $("#inventory_count-" + id).text(status)
       })
 
       $.get("/products/" + id + "/description", function(data) {
